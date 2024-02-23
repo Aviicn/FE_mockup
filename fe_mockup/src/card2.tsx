@@ -4,45 +4,31 @@ import KPU from './assets/images/KPU.png'; // Import gambar dengan sintaks yang 
 
 function Card2() {
   return (
-    <div className="content body pt-28">
-      <div className="mx-32 relative">
-        <div className="grid grid-cols-3 gap-4 py-24 px-32">
-          <div className="col-span-2 relative bg-gradient-to-b from-gray-500 to-black">
+    <div className="content body pt-27">
+      <div className="relative mx-32">
+        <div className="grid grid-cols-3 gap-4 px-32 py-24">
+          <div className="relative col-span-2 bg-gradient-to-b from-gray-500 to-black">
             <img
-              className="mix-blend-overlay w-full h-96"
+              className="w-full mix-blend-overlay h-96"
               src={KPU}
               alt="KPU"
             />
             <div className="">
-              <div className="absolute bottom-24 left-4 red-KPU text-white rounded-xl px-2 py-2 font-semibold text-xl">
+              <div className="absolute px-2 py-2 text-xl font-semibold text-white bottom-24 left-4 red-KPU rounded-xl">
                 SENIN, 03 JAN 2023
               </div>
               <div className="absolute bottom-4 left-4">
-                <h1 className="text-white text-3xl font-bold">
+                <h1 className="text-3xl font-bold text-white">
                   KPU TETAPKAN 3 MENTOR TERBAIK
                 </h1>
-                <p className="text-white text-2xl font-light">Super Admin</p>
+                <p className="text-2xl font-light text-white">Super Admin</p>
               </div>
             </div>
           </div>
-          <div className="bg-white relative w-full h-96">
+          <div className="relative w-full bg-white h-96">
             <img src={KPU} alt="KPU" />
             <div className="">
-              <div className="absolute bottom-32 left-4 red-KPU text-white rounded-xl px-2 py-2 font-semibold text-xl">
-                SENIN, 03 JAN 2023
-              </div>
-              <div className="absolute bottom-4 left-4">
-                <h1 className="text-2xl font-bold">
-                  KPU TETAPKAN 3 MENTOR TERBAIK
-                </h1>
-                <p className="text-2xl">Super Admin</p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white relative w-full h-96">
-            <img src={KPU} alt="KPU" />
-            <div className="">
-              <div className="absolute bottom-32 left-4 red-KPU text-white rounded-xl px-2 py-2 font-semibold text-xl">
+              <div className="absolute px-2 py-2 text-xl font-semibold text-white bottom-32 left-4 red-KPU rounded-xl">
                 SENIN, 03 JAN 2023
               </div>
               <div className="absolute bottom-4 left-4">
@@ -53,10 +39,10 @@ function Card2() {
               </div>
             </div>
           </div>
-          <div className="bg-white relative w-full h-96">
+          <div className="relative w-full bg-white h-96">
             <img src={KPU} alt="KPU" />
             <div className="">
-              <div className="absolute bottom-32 left-4 red-KPU text-white rounded-xl px-2 py-2 font-semibold text-xl">
+              <div className="absolute px-2 py-2 text-xl font-semibold text-white bottom-32 left-4 red-KPU rounded-xl">
                 SENIN, 03 JAN 2023
               </div>
               <div className="absolute bottom-4 left-4">
@@ -67,10 +53,24 @@ function Card2() {
               </div>
             </div>
           </div>
-          <div className="bg-white relative w-full h-96">
+          <div className="relative w-full bg-white h-96">
             <img src={KPU} alt="KPU" />
             <div className="">
-              <div className="absolute bottom-32 left-4 red-KPU text-white rounded-xl px-2 py-2 font-semibold text-xl">
+              <div className="absolute px-2 py-2 text-xl font-semibold text-white bottom-32 left-4 red-KPU rounded-xl">
+                SENIN, 03 JAN 2023
+              </div>
+              <div className="absolute bottom-4 left-4">
+                <h1 className="text-2xl font-bold">
+                  KPU TETAPKAN 3 MENTOR TERBAIK
+                </h1>
+                <p className="text-2xl">Super Admin</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative w-full bg-white h-96">
+            <img src={KPU} alt="KPU" />
+            <div className="">
+              <div className="absolute px-2 py-2 text-xl font-semibold text-white bottom-32 left-4 red-KPU rounded-xl">
                 SENIN, 03 JAN 2023
               </div>
               <div className="absolute bottom-4 left-4">
