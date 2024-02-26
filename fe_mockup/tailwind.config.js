@@ -4,7 +4,13 @@ export default {
   "./src/**/*.{js,ts,jsx,tsx}",
 ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        dasar: "#CECECE",
+        awal: "5C1E0E",
+        akhir: "975856",
+      },
+    },
   },
   plugins: [],
 }
