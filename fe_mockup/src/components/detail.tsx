@@ -3,6 +3,7 @@ import Navbar from './navbar.tsx';
 import Footer from './footer.tsx';
 import KPU from '../assets/images/KPU.png'
 import "../index.css";
+import { Link } from "react-router-dom";
 
 
 const Detail: React.FC = () => {
@@ -16,7 +17,7 @@ const Detail: React.FC = () => {
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
                          </svg>
-                        <p  ><a href="/"> Beranda </a> </p>
+                        <p  ><Link to= "/"> Beranda </Link> </p>
                             <h1 className="flex m-0 mx-auto ml-64 ">BERITA HARI INI</h1>
                         </div>
                         <h1 className="mt-5 text-2xl font-bold text-center text">KPU DUMBWAYS TETAPKAN 3 MENTOR TERBAIK</h1>

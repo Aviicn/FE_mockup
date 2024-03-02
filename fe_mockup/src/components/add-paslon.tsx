@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../index.css';
 import Navbar2 from './navbar2';
-import Jk from '../assets/images/jk.jpg';
+import Hs from '../assets/images/hs.jpg';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -35,10 +35,10 @@ const AddPaslon: React.FC = () => {
     <>
       <Navbar2 />
       <div>
-        <h1 className="text-5xl font-black mb-4 text mt-10 text-center"> ADD PASLON</h1>
+        <h1 className="mt-10 mb-4 text-5xl font-black text-center text"> ADD PASLON</h1>
       </div>
       <div className="flex flex-row justify-center mt-20 ">
-        <img src={Jk} alt='Jk' className="w-[368px] h-70 rounded-lg mr-8" />
+        <img src={Hs} alt='Hs' className="w-[368px] h-70 rounded-lg mr-8" />
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="nama" className="block font-medium">Nama</label>

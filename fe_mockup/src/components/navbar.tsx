@@ -1,4 +1,6 @@
   import React, { useState } from 'react';
+  import { Link } from 'react-router-dom';
+
 import Logo from '../assets/images/logo.png';
 
 function Navbar () {
@@ -17,15 +19,16 @@ function Navbar () {
         </p>
       </div>
       <ul className="flex items-center justify-end gap-5 text-white">
-        <li><a href='/add-partai'> Partai </a></li>
+        <li><Link to='/list-partai'> Partai </Link></li>
         <li> | </li>
-        <li><a href='/add-paslon'> Paslon </a></li>
+        <li><Link to='/list-paslon'> Paslon </Link></li>
         <li> | </li>
-        <li><a href='/vote'> Voting </a></li>
+        <li><Link to='/vote'> Voting </Link></li>
+        
 
         {isLoggedIn ? (
           <div>
-            <button className='text-black bg-white rounded-full w-7' onClick={handleClick}><a href='/admin'> A </a></button>
+            <button className='text-black bg-white rounded-full w-7' onClick={handleClick}><Link to='/admin'> A </Link></button>
           </div>
         ) : (
           <div>
