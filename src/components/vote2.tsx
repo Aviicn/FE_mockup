@@ -135,10 +135,8 @@ const Vote: React.FC = () => {
                         </div>
                         </div>
                         </div>
-                        <div className='flex justify-center'>
-                        <div className="bgc2 flex  justify-center w-[466px] p-4 text-[32px] h-[67px] rounded-lg mt-10 font-bold  hover:bg-lime-700">
-                            <button onClick={goToSModal}>MASUKAN SUARAMU</button>
-                        </div>
+                        <div className='flex justify-center mt-10 text-3xl font-bold'>
+                       <h1>ANDA SUDAH MEMILIH !!!</h1>
                         </div>
                         <div className="h-[500px] w-full bg-gray-300 flex-row">
   <h2 className="mt-10 mb-2 text-5xl font-black text-center text">INFO PASLON</h2>

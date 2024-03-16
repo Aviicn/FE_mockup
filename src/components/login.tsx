@@ -1,17 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 interface handleAuth {
     handle: (e: React.ChangeEvent<HTMLInputElement>) => void
     login: (e: React.FormEvent<HTMLFormElement>) => void
 }
 
+interface LoginPageState {
+    username: string;
+    password: string;
+    error: string | null;
+}
+
 export default function Login(props: handleAuth) {
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault(); 
-        props.login(e);
+
+    const [state, setState] = useState<LoginPageState>({
+        username: '',
+        password: '',
+        error: null,
+    });
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setState({
+            ...state,
+            [event.target.name]: event.target.value,
+        });
     };
 
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post("http://localhost:3000/api/auth/login", {
+                username: state.username,
+                password: state.password
+            });
+            console.log("ASD", response.data)
+            if(!response.data.data) return
+            handleSuccessfulLogin(response.data.data,response.data.user);
+            props.login(e);
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
+    };
+
+
+    
+
+    const handleSuccessfulLogin = (data: string, user: { role: string; }) => {
+        localStorage.setItem('authToken', data);
+        localStorage.setItem('role', user.role);
+
+    };
     return (
         <>
             <div>
@@ -26,7 +66,8 @@ export default function Login(props: handleAuth) {
                             id="username"
                             name="username"
                             placeholder='type your username'
-                            onChange={props.handle}
+                            value={state.username}
+                            onChange={handleInputChange}
                             className="w-[478px] h-[70px] border-black border rounded-md text-center"
                         />
                     </div>
@@ -37,7 +78,8 @@ export default function Login(props: handleAuth) {
                             id="password"
                             name="password"
                             placeholder='type your password'
-                            onChange={props.handle}
+                            value={state.password}
+                            onChange={handleInputChange}
                             className="w-[478px] h-[70px] border-black border rounded-md text-center"
                         />
                     </div>

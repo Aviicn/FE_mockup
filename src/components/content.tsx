@@ -1,8 +1,5 @@
 import "../index.css";
 import { Link } from 'react-router-dom';
-
-
-
 import Dumbways from "../assets/images/dumbways.png";
 import Background from "../assets/images/rtl.png";
 import Kotak from "../assets/images/kotak.png";

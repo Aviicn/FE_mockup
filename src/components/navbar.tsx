@@ -10,6 +10,10 @@ function Navbar () {
     setIsLoggedIn(!isLoggedIn);
   };
 
+  const logout = () => {
+    localStorage.removeItem("authToken");
+    setIsLoggedIn(false);
+};
   return (
     <div className="flex items-center justify-between h-16 px-8 bg-black"> 
       <div className="flex items-center space-x-8"> 
@@ -32,7 +36,7 @@ function Navbar () {
           </div>
         ) : (
           <div>
-            <button className="text-black rounded-s-none bg-white 	border-radius: 0.375rem w-28" onClick={handleClick}>Login</button>
+            <button className="text-black rounded-s-none bg-white 	border-radius: 0.375rem w-28" onClick={logout}>Login</button>
           </div>
         )}   
          </ul>

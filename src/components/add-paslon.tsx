@@ -11,6 +11,7 @@ const AddPaslon: React.FC = () => {
     nama: '',
     nomor: '',
     visimisi: '',
+    koalisi: ','
   });
 
   // Handler untuk mengubah data form saat input berubah
@@ -38,7 +39,7 @@ const AddPaslon: React.FC = () => {
         <h1 className="mt-10 mb-4 text-5xl font-black text-center text"> ADD PASLON</h1>
       </div>
       <div className="flex flex-row justify-center mt-20 ">
-        <img src={Hs} alt='Hs' className="w-[368px] h-70 rounded-lg mr-8" />
+        <img src={Hs} alt='Hs' className="w-80 h-80 rounded-lg mr-8" />
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="nama" className="block font-medium">Nama</label>
@@ -68,6 +69,16 @@ const AddPaslon: React.FC = () => {
               id="visimisi"
               name="visimisi"
               value={formData.visimisi}
+              onChange={handleChange}
+              className="w-[580px] h-[90px] border-black border rounded-md"
+            />
+          </div>
+          <div>
+            <label htmlFor="koalisi" className="block font-medium">Koalisi</label>
+            <textarea
+              id="koalisi"
+              name="koalisi"
+              value={formData.koalisi}
               onChange={handleChange}
               className="w-[580px] h-[90px] border-black border rounded-md"
             />

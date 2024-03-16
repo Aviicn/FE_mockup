@@ -26,8 +26,8 @@ const App: React.FC = () => {
   const [isLoginAdmin, setIsLoginAdmin] = React.useState<boolean>(false);
   const [isLogin, setIsLogin] = React.useState<boolean>(false);
   const [form, setForm] = React.useState<isAuth>({
-    username: 'avii',
-    password: 'admin'
+    username: '',
+    password: ''
   });
 
   function handleSetForm(e: ChangeEvent<HTMLInputElement>): void {
@@ -38,7 +38,8 @@ const App: React.FC = () => {
   }
 
   function login() {
-    if (form.username === "avii" && form.password === "admin") {
+    const role = localStorage.getItem("role")
+    if (role === "admin") {
       setIsLoginAdmin(true);
       navigate("/homeadmin");
     } else {
@@ -60,13 +61,7 @@ const App: React.FC = () => {
       return <Outlet />;
     } else {
       return (
-        <>
           <Navigate to="/" />
-          <Navigate to="/homeadmin" />
-          <Navigate to="/add-partai" />
-          <Navigate to="/add-paslon" />
-        
-        </>
       );
     } 
   }
