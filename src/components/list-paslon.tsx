@@ -21,7 +21,7 @@ const ListPaslon: React.FC<ListPaslonProps> = ({}) => {
 
     const fetchPaslons = async () => {
       const { data, status } = await axios.get<Paslon[]>(
-        'http://localhost:3000/api/Paslons',
+        'http://localhost:3000/api/paslons',
         {
           headers: {
             Accept: 'application/json',
@@ -76,7 +76,7 @@ const ListPaslon: React.FC<ListPaslonProps> = ({}) => {
               <td className="px-4 py-2 border">
                 <img src={_Paslons.picture} alt="" className="w-20 h-20" />
               </td>
-              <td className="px-4 py-2 border">{_Paslons.serial_number}</td>
+              <td className="px-4 py-2 border">{_Paslons.no}</td>
               <td className="px-4 py-2 border">{_Paslons.visionAndMission}</td>
               <td className="px-4 py-2 border">{_Paslons.coalition}</td>
             </tr>

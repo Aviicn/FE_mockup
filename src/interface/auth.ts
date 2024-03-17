@@ -25,7 +25,7 @@ export interface Partais {
     id: number;
     name: string;
     picture: string;
-    serial_number: number;
+    no: number;
     coalition: string[];
-    visionAndMission: string[];
+    visionAndMission: string;
   };

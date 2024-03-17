@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import pp from '../assets/images/pp.jpg';
 import Logo from '../assets/images/logo.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,11 +22,11 @@ const Navbar2: React.FC = () => {
         </p>
       </div>
       <ul className="flex items-center justify-end gap-5 text-white">
-        <li><Link to='/add-partai'> Partai </Link></li>
+        <li><Link to='/list-partai'> Partai </Link></li>
         <li> | </li>
-        <li><Link to='/add-paslon'> Paslon </Link></li>   
+        <li><Link to='/list-paslon'> Paslon </Link></li>   
         <div>
-            <button className='text-black bg-white rounded-full w-7' onClick={goToHome}> A </button>
+            <button onClick={goToHome}> <img src={pp} alt=""  className='mt-2 rounded-full w-11 h-11'/> </button>
           </div>
        
          </ul>

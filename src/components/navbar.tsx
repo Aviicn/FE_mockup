@@ -1,22 +1,18 @@
-  import React, { useState } from 'react';
-  import { Link } from 'react-router-dom';
-
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import pp from '../assets/images/pp.jpg';
 import Logo from '../assets/images/logo.png';
+import { useNavigate } from 'react-router-dom';
 
-function Navbar () {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleClick = () => {
-    setIsLoggedIn(!isLoggedIn);
+const Navbar: React.FC = () => {
+  const navigate = useNavigate();
+  const goToHome = () => {
+      navigate('/');
   };
 
-  const logout = () => {
-    localStorage.removeItem("authToken");
-    setIsLoggedIn(false);
-};
   return (
-    <div className="flex items-center justify-between h-16 px-8 bg-black"> 
-      <div className="flex items-center space-x-8"> 
+    <div className="flex items-center justify-between h-16 px-8 bg-black">
+      <div className="flex items-center space-x-8">
         <img className="w-11 h-11" src={Logo} alt="Logo" />
         <p className="text-base text-slate-50 font-interbold">
           PEMILU PRESIDEN DUMBWAYS.ID
@@ -28,18 +24,10 @@ function Navbar () {
         <li><Link to='/list-paslon'> Paslon </Link></li>
         <li> | </li>
         <li><Link to='/vote'> Voting </Link></li>
-        
-
-        {isLoggedIn ? (
           <div>
-            <button className='text-black bg-white rounded-full w-7' onClick={handleClick}><Link to='/admin'> A </Link></button>
+            <button  onClick={goToHome}> <img src={pp} alt="" className='mt-2 rounded-full w-11 h-11' /></button>
           </div>
-        ) : (
-          <div>
-            <button className="text-black rounded-s-none bg-white 	border-radius: 0.375rem w-28" onClick={logout}>Login</button>
-          </div>
-        )}   
-         </ul>
+      </ul>
     </div>
   );
 }

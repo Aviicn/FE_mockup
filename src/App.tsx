@@ -76,10 +76,11 @@ const App: React.FC = () => {
         <Route path="/homeadmin" element={<HomeAdmin />} />
         <Route path="/add-partai" element={<AddPartai />} />
         <Route path="/add-paslon" element={<AddPaslon />} />
-        <Route path="/list-partai" element={<ListPartai />} />
-        <Route path="/list-paslon" element={<ListPaslon />} />
       </Route>
 
+      <Route path="/list-partai" element={<ListPartai />} />
+        <Route path="/list-paslon" element={<ListPaslon />} />
+        
       <Route path="/" element={<PrivateRoute />}>
         <Route path="/home" element={<Home />} />
         <Route path="/detail" element={<Detail />} />
