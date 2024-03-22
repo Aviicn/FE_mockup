@@ -7,8 +7,8 @@ import axios from 'axios';
 const AddPaslon: React.FC = () => {
   // State untuk menyimpan data form
   const [formData, setFormData] = useState({
-    name: '',
     no: '',
+    name: '',
     visionAndMission: '',
     coalition: '',
   });
@@ -22,7 +22,6 @@ const AddPaslon: React.FC = () => {
   // Handler untuk mengirim form
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("dsjdhsjhd", handleSubmit)
     const authToken = localStorage.getItem("authToken")
     
     try {

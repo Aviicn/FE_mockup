@@ -1,8 +1,10 @@
 import Navbar2 from "./navbar2";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { Partais } from "../interface/auth"
+
+import logo from "../assets/images/logo.jpg"
+import axios from "axios";
 
 
 interface ListPartaiProps {}
@@ -10,7 +12,7 @@ interface ListPartaiProps {}
 const ListPartai: React.FC<ListPartaiProps> = ({}) => {
   const [listPartais, setListPartais] = React.useState<Partais[]>([]);
   const navigate = useNavigate();
-
+  const role = localStorage.getItem("role")
   
 
   React.useEffect(() => {
@@ -48,20 +50,23 @@ const ListPartai: React.FC<ListPartaiProps> = ({}) => {
         <h1>LIST PARTAI</h1>
       </div>
       <div className="flex items-start justify-end mt-4 mr-36">
+      {role === "admin" && (
           <button
             onClick={handleClickAddPartai}
             className="bg-[#5E5400] text-white px-4 py-2 rounded-md"
           >
-            Add Partai
+
+            Add Paslon
           </button>
+          )}
         </div>
       <div className="flex mx-auto mt-4 overflow-x-auto">
-      <table className="table-fixed w-[1095px] h-[153px] mx-auto divide-y divide-gray-200 border-collapse border border-slate-900">
+      <table className="table-auto w-[1095px] h-[153px] mx-auto divide-y divide-gray-200 border-collapse border border-slate-900">
             <thead>
             <tr>
               <th className="py-3 font-black tracking-wider text-left text-black uppercase border bg-slate-200 -px-6 text-l border-slate-600">No.Urut</th>
-              <th className="px-6 py-3 font-black tracking-wider text-left text-black uppercase border bg-slate-200 text-l border-slate-600">Nama Partai</th>
               <th className="px-6 py-3 font-black tracking-wider text-left text-black uppercase border bg-slate-200 text-l border-slate-600">Logo</th>
+              <th className="px-6 py-3 font-black tracking-wider text-left text-black uppercase border bg-slate-200 text-l border-slate-600">Nama Partai</th>
               <th className="px-6 py-3 font-black tracking-wider text-left text-black uppercase border bg-slate-200 text-l border-slate-600">Ketua Umum</th>
               <th className=" bg-slate-200 px-6 py-3 text-left text-l font-black text-black uppercase tracking-wider border border-slate-600 w-[325px] h-[113px]">Visi Misi </th>
               <th className="px-6 py-3 font-black tracking-wider text-left text-black uppercase border bg-slate-200 text-l border-slate-600">Alamat </th>
@@ -71,14 +76,14 @@ const ListPartai: React.FC<ListPartaiProps> = ({}) => {
           {listPartais?.map((Partais, index) => {
                 return (
                   <tr key={index} className="border-b dark:border-neutral-500">
-                  <td className="px-6 py-4 font-medium text-center border-r whitespace-nowrap dark:border-neutral-500">
+                  <td className="px-6 py-4 text-xl font-medium text-center border-r whitespace-nowrap dark:border-neutral-500">
                   {Partais.nomor_urut}
                   </td>
                   <td className="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-500">
                     <img
-                      src={Partais.picture}
+                      src={logo}
                       alt=""
-                      className="w-[78px] h-[94px] rounded-lg"
+                      className="w-20 h-20 rounded-lg"
                     />
                   </td>
                     <td className="px-6 py-4 font-medium text-center border-r whitespace-nowrap dark:border-neutral-500">
